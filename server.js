@@ -5,6 +5,10 @@ const axios = require("axios");
 //bodyparser middleware
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("welcome to the dialogflow weather bot");
+});
+
 app.post("/", (req, res) => {
   let city = req.body.queryResult.parameters["geo-city"];
   let url = `https://samples.openweathermap.org/data/2.5/weather?q=${city}&95c37ad3b4d58c0cf5cf737a4c82e86c`;
