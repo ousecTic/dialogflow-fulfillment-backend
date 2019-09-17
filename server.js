@@ -7,7 +7,7 @@ app.use(express.json());
 
 app.post("/", (req, res) => {
   let city = req.body.queryResult.parameters["geo-city"];
-  let url = `https://samples.openweathermap.org/data/2.5/weather?q=${city}&1537c438c10baa46c61b7ac56b1048ee`;
+  let url = `https://samples.openweathermap.org/data/2.5/weather?q=${city}&95c37ad3b4d58c0cf5cf737a4c82e86c`;
   axios
     .get(url)
     .then(res => {
