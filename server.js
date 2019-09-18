@@ -14,10 +14,9 @@ app.post("/", (req, res) => {
   let url = `https://samples.openweathermap.org/data/2.5/weather?q=${city}&appid=908e350e0f54feebb119c17739cd2e1b`;
   axios
     .get(url)
-    .then(res => {
-      console.log(res);
-      let conditions = res.data.weather.main;
-      let temp = res.data.main.temp;
+    .then(response => {
+      let conditions = response.data.weather.main;
+      let temp = response.data.main.temp;
       let textResponse = `In ${city}, it is ${temp} degrees Kelvin and ${conditions}`;
       res.send(createTextResponse(textResponse));
     })
