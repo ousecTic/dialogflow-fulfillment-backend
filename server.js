@@ -15,6 +15,7 @@ app.post("/", (req, res) => {
   axios
     .get(url)
     .then(res => {
+      console.log(res);
       let conditions = res.data.weather.main;
       let temp = res.data.main.temp;
       let textResponse = `In ${city}, it is ${temp} degrees Kelvin and ${conditions}`;
