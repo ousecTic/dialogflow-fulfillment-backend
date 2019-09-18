@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
   let city = req.body.queryResult.parameters["geo-city"];
-  let url = `https://samples.openweathermap.org/data/2.5/weather?q=${city}&95c37ad3b4d58c0cf5cf737a4c82e86c`;
+  let url = `https://samples.openweathermap.org/data/2.5/weather?q=${city}&appid=908e350e0f54feebb119c17739cd2e1b`;
   axios
     .get(url)
     .then(res => {
