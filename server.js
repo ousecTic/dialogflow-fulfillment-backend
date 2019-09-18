@@ -16,6 +16,7 @@ app.post("/", (req, res) => {
     .get(url)
     .then(response => {
       let conditions = response.data.weather.main;
+      console.log(response.data);
       let temp = response.data.main.temp;
       let textResponse = `In ${city}, it is ${temp} degrees Kelvin and ${conditions}`;
       res.send(createTextResponse(textResponse));
